@@ -1,0 +1,57 @@
+{% extends "adminbase.html" %}
+{% block body %}
+<h4 style="color:blue;text-align:center;">
+    Booking Details
+
+</h4>
+<div class="row">
+    <div class="col-sm-12">
+        {% if res %}
+        <table border="1" style="width:50%;margin:0 auto">
+            <tr>
+                <td>Name</td>
+                <td>{{res.name}}</td>
+            </tr>
+           <tr>
+               <td>
+                   Address
+               </td>
+               <td>{{res.address}}</td>
+           </tr>
+            <tr>
+                <td>Contact No</td>
+                <td>{{res.contactno}}</td>
+            </tr>
+            <tr>
+                <td>Aadhar No</td>
+                <td>{{res.aadharno}}</td>
+            </tr>
+            <tr>
+                <td>No. Of Packets</td>
+                <td>{{res.noofpacket}}</td>
+            </tr>
+            <tr>
+                <td>Duration In Months</td>
+                <td>{{res.duration}}</td>
+            </tr>
+            <tr>
+                <td>Rate per month per packet</td>
+                <td>{{res.rate}}</td>
+            </tr>
+            <tr>
+                <td>Total Amount</td>
+                <td>{{res.totalamt}}</td>
+            </tr>
+            <tr>
+                <td>Advance Amount</td>
+                <td>{{res.advance}}</td>
+            </tr>
+            <tr>
+                <td>Rest Amount</td>
+                <td>{{res.restamt}}</td>
+            </tr>
+        </table>
+        {% endif %}
+    </div>
+</div>
+{% endblock body %}

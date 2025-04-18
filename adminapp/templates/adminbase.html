@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <title>Secure Byte</title>
+    <style>
+        body {
+            background-color: #f9f5f0;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #ff9800 !important;
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: white !important;
+        }
+        .navbar-dark .navbar-brand {
+            color: white !important;
+        }
+        h2, h3, h4 {
+            color: #ff9800;
+        }
+        .blog {
+            background-color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .blog-post {
+            background-color: #ffe0b2;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 350px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .read-more {
+            color: #ff9800;
+            font-weight: bold;
+        }
+        .read-more:hover {
+            color: #e65100;
+        }
+        .gallery {
+            background-color: #fff3e0;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .gallery-item {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .caption {
+            background: rgba(255, 152, 0, 0.8);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Secure Byte</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Enquiries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Closing</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="blog">
+        <div class="container">
+            <h2>Our Blog</h2>
+            <p>Stay updated with the latest tips and events.</p>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <img src="image/12.avif" alt="Coffee Recipe">
+                    <div class="post-info">
+                        <h4>How to Brew the Perfect Espresso</h4>
+                        <p>Learn to make the perfect espresso at home.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="container">
+            <h2>Our Coffee Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="image/c.jpeg" alt="Coffee">
+                    <div class="caption">Espresso Shot</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

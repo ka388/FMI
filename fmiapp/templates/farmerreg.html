@@ -1,0 +1,44 @@
+{% extends "base.html"%}
+{% block body %}
+<h3 style="color:rgb(11, 8, 34);border-radius:10px;text-align:center">
+
+    Farmer Registation Form
+</h3>
+{% if msg %}
+<p style="text-align:center">{{msg}}</p>
+{% endif %}
+<form action="{% url 'freg' %}" method="post">
+    {% csrf_token %}
+<div class="row py-3 bg-secondary">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+       <div class="form-group">
+           <label>Enter Your Name</label>
+           <input type="text" name="name" class="form-control" required="true" style="box-shadow:rgb(38, 57, 77) 0px,20px,30px,-10px";/>
+       </div>
+        <div class="form-group">
+            <lable>Slect Your Gender</lable><br/>
+            <input type="radio" name="gender" value="Male" style="box-shadow:rgb(38, 57, 77) 0px,20px,30px,-10px";/>Male
+            <input type="radio" name="gender" value="Female" style="box-shadow:rgb(38, 57, 77) 0px,20px,30px,-10px";/>Female
+
+    </div>
+        <div class="form-group">
+            <lable>Enter Address</lable>
+            <textarea name="address" class="form-control" style="box-shadow:rgb(38, 57, 77) 0px,20px,30px,-10px";></textarea>
+        </div>
+        <div class="form-group">
+            <label>Enter Contact No</label>
+            <input type="number" name="contactno" required="true" class="form-control" style="box-shadow:rgb(38, 57, 77) 0px,20px,30px,-10px";/>
+        </div>
+        <div class="form-group">
+            <label>Enter Aadhar NO</label><br/>
+            <input type="aadharno" name="aadharno" required="true" class="form-control" style="box-shadow:rgb(38, 57, 77) 0px,20px,30px,-10px";><br/>
+        </div>
+        <div class="form-control">
+            <input type="Submit" value="Register" class="btn btn-info" style="box-shadow:rgb(38, 57, 77) 0px,20px,30px,-10px";/>
+
+    <div class="col-sm-3"></div>
+</div>
+</div>
+</form>
+{% endblock body %}

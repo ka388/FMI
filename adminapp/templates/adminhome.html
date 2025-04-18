@@ -1,0 +1,52 @@
+{% extends "adminbase.html" %}
+{% block body %}
+<h1 style="text-align:center;">Some Information Of The Cold Storage</h1>
+<div class="row text-center text-warning mt-3">
+    
+
+<div class="row mt-3 text-warning text-center">
+    
+<h2 style="color:dark;text-align:center;mt-4">
+    Add News And Events
+</h2>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <form action="{% url 'adminapp:addnews' %}" method="post">
+            {% csrf_token %}
+        <div class="form-group">
+            <label>Enter News Description</label>
+            <textarea name="newstext" class="form-control"></textarea>
+        </div>
+            <br/>
+            <input type="submit" value="Add" class="btn btn-info"/>
+        </form>
+    </div>
+    <div class="col-sm-3"></div>
+
+</div>
+<div class="row mt-2">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <table border="1" style="margin:0 auto;" cellpadding="10px"cellspacing="5px shawod">
+            <tr>
+                <th>Id</th>
+                <th>News</th>
+                <th>Posted Date</th>
+                <th>Delete</th>
+            </tr>
+    {% for n in ns %}
+            <tr>
+                <td>{{n.id}}</td>
+                <td>{{n.newstext}}</td>
+                <td>{{n.newsdate}}</td>
+                <td>
+                    <a href="{% url 'adminapp:deletenews' id=n.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+{% endblock body %}
