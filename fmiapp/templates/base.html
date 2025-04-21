@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <title>FMI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #333;
+        }
+
+        .headline {
+            background-color: #0d6efd;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .headline h5 i {
+            margin-right: 10px;
+        }
+
+        .headline span {
+            font-weight: normal;
+        }
+
+        .navbar {
+            background-color: #1c1f23;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 10px;
+            padding: 10px 16px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #0d6efd;
+            color: #fff;
+        }
+
+        .dropdown-menu {
+            background-color: #343a40;
+            border-radius: 10px;
+        }
+
+        .dropdown-item {
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #495057;
+            color: #ffc107;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn-outline-light {
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .btn-outline-light:hover {
+            background-color: #ffc107;
+            color: #212529;
+        }
+
+        .carousel img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .carousel-inner {
+            border-radius: 10px;
+        }
+
+        .bg-dark {
+            background-color: #212529 !important;
+        }
+
+        .bg-secondary {
+            background-color: #6c757d !important;
+        }
+
+        .bg-warning {
+            background-color: #ffc107 !important;
+        }
+
+        .text-light {
+            color: #f8f9fa !important;
+        }
+
+        .text-dark {
+            color: #212529 !important;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .card {
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .card p {
+            margin: 0;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <!-- Headline Start -->
+    
+
+    <!-- Navbar Start -->
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          <span class="text-warning fs-4">Secure Byte</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" href="{% url 'index' %}">
+                      <i class="fa-solid fa-house"></i> Home
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% static 'images/k.html' %}">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <i class="fa-solid fa-id-card"></i> Registration
+                  </a>
+                  <ul class="dropdown-menu bg-dark">
+                      <li><a class="dropdown-item text-light" href="{% url 'farmerreg' %}">Farmer Registration</a></li>
+                      <li><a class="dropdown-item text-light" href="{% url 'merchentreg' %}">Merchant Registration</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+              </li>
+          </ul>
+          <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-warning" type="submit">Search</button>
+          </form>
+      </div>
+  </div>
+</nav>
+<!-- Navbar End -->
+
+<!-- Navbar End -->
+
+    <!-- Carousel + Text Row -->
+    <div class="row bg-dark text-center mt-2">
+        <div class="col-sm-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/eco-bag-supermarket.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/healthy-eating-harvest.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/cherry-tomatoes-lemon-free-space.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-sm-6 text-light d-flex flex-column justify-content-center p-4">
+            <h1><i>Cold Storage!!!!</i></h1>
+            <p>Our strategically located Cold Storage facilities offer ideal temperature ranges (-25°C to +25°C),
+                supporting your time-sensitive logistics. From pharmaceuticals to fruits, our flexible, atmosphere-controlled
+                units ensure top-quality preservation year-round.</p>
+        </div>
+    </div>
+
+    <!-- Notice Board + Body Block -->
+    <div class="row mt-2">
+        <div class="col-sm-4 text-center text-dark">
+            <h1>Notice Board</h1>
+            <div class="card bg-warning shadow">
+                {% for n in ns %}
+                    <p>{{n.newstext}}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-sm-8 text-light bg-secondary">
+            {% block body %}
+            {% endblock body %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<div class="row mt-2">
+  <div class="col-sm-12 text-center">
+    <h1 style="font-weight: bold; color: #0f172a; font-family: 'Segoe UI', sans-serif;"><i>Our Products</i></h1>
+  </div>
+</div>
+
+<!-- Product Cards Row 1 -->
+<div class="row mt-4 bg-light px-3 py-3 rounded shadow-sm">
+
+  <!-- Potato -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="{% static 'images/closeup-woman-holding-potato-hand.jpg' %}" class="card-img-top" alt="Potato Cold Store">
+      <div class="card-body">
+        <details style="font-family: Verdana;">
+          <summary><h5 class="card-title text-primary fw-bold">Potato Cold Store</h5></summary>
+          <p class="card-text">Ambient cooling keeps potatoes fresh for up to 3 months post-harvest. This process helps harden the skin and delay deterioration, ensuring quality.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fruits -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="{% static 'images/mangoes-market.jpg' %}" class="card-img-top" alt="Fruits Cold Storage">
+      <div class="card-body">
+        <details style="font-family: Verdana;">
+          <summary><h5 class="card-title text-primary fw-bold">Fruits Cold Storage</h5></summary>
+          <p class="card-text">Cold storage is ideal for preserving perishable fruits. With the right temperature and humidity, freshness is retained between production and sale.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tomato -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="{% static 'images/woman-picking-tomatoes-reusable-bag-ecology-earth-day-thematics.jpg' %}" class="card-img-top" alt="Tomato Cold Storage">
+      <div class="card-body">
+        <details style="font-family: Verdana;">
+          <summary><h5 class="card-title text-primary fw-bold">Tomato Cold Storage</h5></summary>
+          <p class="card-text">Tomatoes stored above 40°F prevent breakdown. Mature green tomatoes ripen well in controlled environments—ensuring freshness for retailers and farmers.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Onion -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="{% static 'images/shallots-placed-brown-wood.jpg' %}" class="card-img-top" alt="Onion Cold Storage">
+      <div class="card-body">
+        <details style="font-family: Verdana;">
+          <summary><h5 class="card-title text-primary fw-bold">Onion Cold Storage</h5></summary>
+          <p class="card-text">Onions are best stored at 25–30°C with 65–70% relative humidity. Proper ventilation keeps them dry, fresh, and durable in varying conditions.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product Cards Row 2 (Repeated Section) -->
+<div class="row mt-4 bg-light px-3 py-3 rounded shadow-sm">
+
+  <!-- Repeating Potato -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="{% static 'images/closeup-woman-holding-potato-hand.jpg' %}" class="card-img-top" alt="Potato Cold Store">
+      <div class="card-body">
+        <details style="font-family: Verdana;">
+          <summary><h5 class="card-title text-primary fw-bold">Potato Cold Store</h5></summary>
+          <p class="card-text">This facility uses ambient cooling to extend the life of potatoes post-harvest by 1 to 3 months. Great for reducing spoilage.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Repeating Fruits -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="{% static 'images/mangoes-market.jpg' %}" class="card-img-top" alt="Fruits Cold Storage">
+      <div class="card-body">
+        <details style="font-family: Verdana;">
+          <summary><h5 class="card-title text-primary fw-bold">Fruits Cold Storage</h5></summary>
+          <p class="card-text">Our cold storage system optimally handles bulk fruit shipments between farm and market, maintaining freshness.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Repeating Tomato -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="{% static 'images/woman-picking-tomatoes-reusable-bag-ecology-earth-day-thematics.jpg' %}" class="card-img-top" alt="Tomato Cold Storage">
+      <div class="card-body">
+        <details style="font-family: Verdana;">
+          <summary><h5 class="card-title text-primary fw-bold">Tomato Cold Storage</h5></summary>
+          <p class="card-text">We prevent spoilage by storing tomatoes at optimal ripening conditions. Ideal for wholesale and farm-to-store logistics.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- Repeating Onion -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <img src="{% static 'images/shallots-placed-brown-wood.jpg' %}" class="card-img-top" alt="Onion Cold Storage">
+      <div class="card-body">
+        <details style="font-family: Verdana;">
+          <summary><h5 class="card-title text-primary fw-bold">Onion Cold Storage</h5></summary>
+          <p class="card-text">Properly ventilated and climate-controlled storage for onions. Reliable for exporters, distributors, and local vendors.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Services Header -->
+
+
+<!-- Services Header -->
+<div class="row py-3 mt-3" style="background: linear-gradient(90deg, #1e3a8a, #2563eb);">
+  <div class="col-sm-12 text-white text-center shadow">
+    <h1 style="font-weight: bold; letter-spacing: 1px;"><i>Our Services</i></h1>
+  </div>
+</div>
+
+<!-- Services Cards Section -->
+<div class="row mt-3 bg-light text-dark py-4 px-3 rounded shadow-sm">
+
+  <!-- Exports -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{% static 'images/container-terminal-wharf-transport.jpg' %}" class="card-img-top" alt="Exports">
+      <div class="card-body">
+        <h5 class="card-title text-dark fw-bold">Exports</h5>
+        <p class="card-text">We provide top-quality Indian products to international buyers. With strong warehousing and logistics expertise, we deliver with a lean, agile supply chain. <em>More...</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- C&F Model -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{% static 'images/man-working-hard-supermarket.jpg' %}" class="card-img-top" alt="C&F Model">
+      <div class="card-body">
+        <h5 class="card-title text-dark fw-bold">C&F Model</h5>
+        <p class="card-text">We operate a robust Carry & Forward model with 60,000+ CFT capacity. Our solutions perfectly support cold storage operations for Indian MNCs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fruit Ripening -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{% static 'images/delicious-bananas-hanging-outdoors.jpg' %}" class="card-img-top" alt="Fruit Ripening">
+      <div class="card-body">
+        <h5 class="card-title text-dark fw-bold">Fruit Ripening</h5>
+        <p class="card-text">Our facility ripens 50+ tonnes daily—bananas, mangoes, papayas & more—with ethical ethylene methods in state-of-the-art ripening chambers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ice Plants -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{% static 'images/closeup-shot-beautiful-frosty-ice.jpg' %}" class="card-img-top" alt="Ice Plants">
+      <div class="card-body">
+        <h5 class="card-title text-dark fw-bold">Ice Plants</h5>
+        <p class="card-text">One of the city's oldest ice plants. We produce crystal-clear, clean ice blocks for commercial and industrial cold room applications.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cold Storage Section Header -->
+<div class="row py-3 mt-4" style="background: linear-gradient(90deg, #0f172a, #334155);">
+  <div class="col-sm-12 text-white text-center shadow">
+    <h2 style="font-weight: bold; letter-spacing: 1px;"><i>About Cold Storage</i></h2>
+  </div>
+</div>
+
+<!-- Cold Storage Cards -->
+<div class="row mt-3 bg-light text-dark py-4 px-3 rounded shadow-sm">
+
+  <!-- Cold Rooms -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{% static 'images/staff in storage.jpg' %}" class="card-img-top" alt="Cold Room">
+      <div class="card-body">
+        <h5 class="card-title text-dark fw-bold">Advanced Cold Rooms</h5>
+        <p class="card-text">Our advanced cold rooms use top-grade refrigeration to ensure freshness and long shelf life. Capacity: 40,000+ CFT.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cold Storage -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{% static 'images/Multi-Commodity-Cold-Storage.jpg' %}" class="card-img-top" alt="Cold Storage">
+      <div class="card-body">
+        <h5 class="card-title text-dark fw-bold">High-Capacity Cold Storage</h5>
+        <p class="card-text">With 17,000 tonnes capacity in Indore, we provide reliable, multi-location cold storage tailored to your needs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reliable Delivery -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{% static 'images/images.jpeg' %}" class="card-img-top" alt="Delivery">
+      <div class="card-body">
+        <h5 class="card-title text-dark fw-bold">Reliable Weekly Deliveries</h5>
+        <p class="card-text">We serve every major city weekly with direct, no cross-docking deliveries to maintain premium product quality.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Supply Chain -->
+  <div class="col-sm-3 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{% static 'images/1722250677570.png' %}" class="card-img-top" alt="Supply Chain">
+      <div class="card-body">
+        <h5 class="card-title text-dark fw-bold">Scalable Supply Chain</h5>
+        <p class="card-text">Our in-house designed supply chains grow with your business, offering efficiency, flexibility, and seamless operation.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Section: About Cold Storage -->
+<div class="row bg-primary py-4 mt-4 rounded shadow">
+  <div class="col-sm-12 text-white text-center">
+    <h1><i>To the Founder</i></h1>
+  </div>
+</div>
+
+<!-- Section: About the Director -->
+<div class="row mt-4" style="background-color: #0f172a;"> <!-- Dark Slate Background -->
+  <!-- Full Width Content Without Image -->
+  <div class="col-sm-12 text-white py-4 px-5 shadow-sm">
+    <div class="text-center mb-3">
+      <h3 class="text-success">ER. AJAY CHAUDHARY</h3>
+      <p>
+        <strong>DIRECTOR, SOFTPRO GROUP</strong><br>
+        MEMBER EXECUTIVE COUNCIL, AKTU<br>
+        FOUNDER, PARIVARTAN 'EK SALAH'<br><br>
+        <strong>Industrialist | Educationist | Entrepreneur</strong>
+      </p>
+    </div>
+    
+    <details style="font-family: 'Segoe UI', sans-serif;">
+      <summary>
+        <h4 class="text-info">Professional Journey of Er. Ajay Chaudhary</h4>
+      </summary>
+      <p class="mt-3" style="font-size: 1rem; line-height: 1.7;">
+        Er. Ajay Chaudhary, aged 42, graduated in Electronics from Institute of Engineering & Technology (IET), Lucknow. 
+        He has 17 years of experience as a technical expert, network professional, manager, and techno consultant. 
+        He has worked with top-tier organizations like SGPGI Lucknow, Apollo Group, and Petronas Group (Malaysia & Singapore).<br><br>
+
+        His journey began under Dr. Bhandari at SGPGI, Lucknow, and continued with the Apollo Group. 
+        Together they launched Medvarsity Online Limited — India’s first medical education portal — under the Apollo Group. 
+        This experience sparked his entrepreneurial spirit, leading to the founding of Softpro India in April 2004 after returning to Lucknow.
+      </p>
+    </details>
+  </div>
+</div>
+
+
+
+
+    <!--dr end-->
+
+    <!-- Location Header -->
+<div class="row bg-primary mt-2">
+  <div class="col-sm-12 text-white text-center">
+      <h1>
+          <i class="fa-solid fa-location-dot"></i> Location
+      </h1>
+  </div>
+</div>
+
+<!-- Embedded Map Section -->
+<div class="row mt-2" style="background-color: #e0f7fa;"> <!-- Light Cyan Blue -->
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6 py-3">
+      <p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57490.94407810692!2d84.11410146394117!3d25.764485160329016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399264de6d336a87%3A0xd8d5251dac89a330!2sBallia%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1661848754285!5m2!1sen!2sin" 
+              width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </p>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+
+<!-- Footer Space -->
+<div class="row bg-primary mt-2">
+  <div class="col-sm-12 text-center text-white py-2">
+      <p>&copy; 2025 Location Map Display</p>
+  </div>
+</div>
+
+
+     <!-- Footer Start -->
+<div class="row bg-dark text-light py-5 mt-2 footer">
+  <div class="col-sm-12 text-center shadow">
+    <h1><span class="text-warning">About Us</span></h1>
+    <img src="{% static 'images/Mp-removebg-preview.png' %}" style="height:100px;width:100px;" class="rounded-circle mb-3">
+    
+    <h2 class="text-info">About Cold Storage</h2>
+    <p>
+      The cold storage industry provides refrigeration solutions for a wide range of needs, especially in the food industry.<br>
+      After harvesting, vegetables, fruits, and other perishable items are stored for extended periods<br>
+      to maintain freshness and extend shelf life.
+    </p>
+
+    <p class="mt-4">
+      &copy; 2022-2023 All Rights Reserved | Designed & Developed by 
+      <span class="text-warning">Ballia (Rajpur)</span>
+    </p>
+
+    <ul class="list-inline">
+      <li class="list-inline-item mx-2"><i class="fa-brands fa-facebook fa-2x text-light"></i></li>
+      <li class="list-inline-item mx-2"><i class="fa-brands fa-instagram fa-2x text-light"></i></li>
+      <li class="list-inline-item mx-2"><i class="fa-brands fa-twitter fa-2x text-light"></i></li>
+      <li class="list-inline-item mx-2"><i class="fa-brands fa-goodreads fa-2x text-light"></i></li>
+    </ul>
+  </div>
+</div>
+<!-- Footer End -->
+</body>
+</html>

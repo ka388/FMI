@@ -1,0 +1,51 @@
+{% extends "adminbase.html" %}
+{% block body %}
+<h4 style="text-align:center;color:yellow">
+    Booking Of Agro Products
+</h4>
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+    <form action="{% url 'adminapp:pbook' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" value="{{fi.name}}" class="form-control" readonly="true">
+
+        </div>
+        <div class="form-group">
+            <label>Address
+            </label>
+            <textarea name="address" class="form-control" value="{{fi.address}}" readonly="true">{{fi.address}}</textarea>
+        </div>
+        <div class="form-group">
+            <label>Contact No</label>
+            <input type="nuber" class="form-control" name="contactno" value="{{fi.contactno}}" readonly="true">
+        </div>
+    <div class="form-group">
+        <label>Aadhar No</label>
+        <input type="nuber" name="aadharno" class="form-control" value="{{fi.aadharno}}" readonly="true">
+    </div>
+        <div class="form-group">
+            <label>No. Of Packets</label>
+            <input type="number" name="noofpacket" class="form-control" required="true"/>
+        </div>
+        <div class="form-group">
+            <label>Duration In Months</label>
+            <input type="number" name="duration" class="form-control" required="teue"/>
+        </div>
+        <div class="form-group">
+            <label>Rate per packet per month</label>
+            <input type="number" name="rate" class="form-control" required="true"/>
+        </div>
+        <div class="form-group">
+            <label>Advance booking Amount</label>
+            <input type="number" name="advance" class="form-control" required="true"/>
+        </div>
+        <br/>
+        <input type="submit" value="submit" class="btn btn-info"/>
+    </form>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+{% endblock body %}
